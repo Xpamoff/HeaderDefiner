@@ -14,8 +14,11 @@ response2 = urllib.request.urlopen(url,jdata2)
 data = response2.read().decode('utf8')
 #print(data)
 jdata = json.loads(data)
-print(jdata)
-print(jdata['data'][0]['SearchedAlso'][0])
+#print(jdata)
+
+for i in jdata['data'][0]['SearchedAlso']:
+   print(i['Phrase'] + " - " + str(i['Shows']))
+
 
 #for i in jdata['data']['SearchedAlso']:
  #  print(i)

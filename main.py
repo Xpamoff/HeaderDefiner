@@ -4,44 +4,58 @@ import time
 url = 'https://api-sandbox.direct.yandex.ru/v4/json/'
 token = 'AQAAAAATz2ALAAfGKxA_tjoNVk5ivNjTlx1yQ1o'
 
-data = {
-    'method': 'CreateNewWordstatReport',
-    'token': token,
-    'locale': 'ru',
-    'param': {
-        "Phrases": [
-            "Простуда"
-        ],
-        "GeoID": [
-            0
-        ]
-    }
-}
-# конвертировать словарь в JSON-формат и перекодировать в UTF-8
 
-try:
+def create_report(token, phrase):
+    data = {
+        'method': 'CreateNewWordstatReport',
+        'token': token,
+        'locale': 'ru',
+        'param': {
+            "Phrases": [
+                phrase
+            ],
+            "GeoID": [
+                0
+            ]
+        }
+    }
+
     jdata = json.dumps(data, ensure_ascii=False).encode('utf8')
     response = urllib.request.urlopen(url, jdata)
     num = response.read().decode('utf8')
 
-    a = ""
+    id = ''
     for i in range(8, len(num) - 1):
-        a = a + (str(num[i]))
-    print(int(a))
-finally:
-    time.sleep(2)
-    data0 = {
-       'token': token,
-       'method': 'GetWordstatReport',
-       'param': int(a)
-    }
-    try:
-        jdata2 = json.dumps(data0, ensure_ascii=False).encode('utf8')
+        id = id + (str(num[i]))
+    print('Запрос сформирован')
+    return id
 
-        response2 = urllib.request.urlopen(url, jdata2)
-        data = response2.read().decode('utf8')
-        # print(data)
-        jdata = json.loads(data)
-        print(jdata.data[1].SearchedWith)
-    finally:
-        print("Success")
+
+def get_report(token, report_id):
+    data = {
+        'token': token,
+        'method': 'GetWordstatReport',
+        'param': report_id
+    }
+    jdata = json.dumps(data, ensure_ascii=False).encode('utf8')
+    response = urllib.request.urlopen(url, jdata)
+    report_str = response.read().decode('utf8')
+    report_dict = json.loads(report_str)
+    try:
+        report = report_dict['data'][0]['SearchedAlso']
+        return report
+    except KeyError:
+        print(report_dict)
+        return -1
+
+
+def output(report):
+    for i in report:
+        print(i['Phrase'] + " - " + str(i['Shows']))
+
+
+report_id = create_report(token, "аниме")
+time.sleep(6)
+new_report = get_report(token, report_id)
+if new_report != -1:
+    output(new_report)
