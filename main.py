@@ -49,13 +49,19 @@ def get_report(token, report_id):
         return -1
 
 
-def output(report):
-    for i in report:
-        print(i['Phrase'] + " - " + str(i['Shows']))
+def phrase_choose(report):
+    sorted_report = sorted(report, key=lambda d: d['Shows'], reverse=True)
+    print(sorted_report)
+    count = 0
+    for i in sorted_report:
+        print(i['Phrase'] + ": " + str(i['Shows']))
+        count += 1
+        if count == 5:
+            break
 
 
-report_id = create_report(token, "аниме")
+report_id = create_report(token, "путин умер")
 time.sleep(6)
 new_report = get_report(token, report_id)
 if new_report != -1:
-    output(new_report)
+    phrase_choose(new_report)
