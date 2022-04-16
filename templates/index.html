@@ -2,12 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HeaderDefiner</title>
 </head>
 <body>
-    <form method="POST" action="/get_data">
-        <input name="article" type="text" placeholder="Текст статьи">
-        <button type="submit" value="Отправить">Подтвердить</button>
-    </form>
+    <header class='head bold'>
+        <img src="assets/logo.png" alt="logo" width='100px' class='img-pos'>
+        <div class='buttons-pos'>
+            <a href='index.html' class='button-head regular small-text black-color'>ГЛАВНАЯ</a>
+            <a href='find_keywords.html' class='button-head regular small-text'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
+            
+        </div>
+    </header>
+    <div class='main'>
+        <div class='left'>
+            <div class='inner-left'>
+                <div class='bold bold-text'>welcome</div>
+                <div class='light medium-text'>hello kitty</div>
+                <div class='stick'></div>
+                <div class='thin medium-text' style='margin: 3rem;'>HeaderDefiner - сервис для получения слов.</div>
+                <a href='find_keywords.html' class='button-main regular small-text'>ПОДОБРАТЬ КЛЮЧЕВЫЕ СЛОВА</a>
+            </div>
+        </div>
+
+        <div class='right'>
+            <img src='assets/img2.png' width='620px'>
+        </div>
+    </div>
+    <div class='footer'>
+        HeaderDefiner, 2022
+    </div>
+    
 </body>
 </html>

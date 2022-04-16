@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+}
+
+.head{
+    display: flex;
+    background-color: white;
+    color: #333333;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.img-pos{
+    padding: 1rem;
+}
+
+.buttons-pos{
+    margin: 0.5rem;
+}
+
+.button-head{
+    background-color: white;
+    padding: 1rem;
+    text-decoration: none;
+    color: #757575;
+    transition: 0.25s;
+}
+
+.button-head:hover{
+    color: black;
+}
+
+.button-main{
+    margin: 0.5rem;
+    background-color: #39a0ff;
+    border: 2px solid black;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.button-main:hover{
+    border: 2px solid #39a0ff;
+    color: white;
+}
+
+.main{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #39a0ff;
+    padding: 10rem;
+}
+
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.inner-left{
+    margin-right: 2rem;
+    width: 400px;
+}
+
+.right{
+    width: 50%;
+}
+
+.stick{
+    height: 107px;
+    transform-origin: center top;
+    width: 4px;
+    margin: 51px auto 0;
+    border: 4px solid black;
+    box-sizing: border-box;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+}
+
+.footer{
+    background-color: #333333;
+    height: 3rem;
+    padding: 1rem;
+    height: 8rem;
+    color: white;
+}
+
+.bold{
+    font-weight: 900;
+}
+
+.regular{
+    font-weight: 400;
+}
+
+.thin{
+    font-weight: 100;
+}
+
+.light{
+    font-weight: 300;
+}
+
+.small-text{
+    font-size: 1rem;
+}
+
+.medium-text{
+    font-size: 1.5rem;
+}
+
+
+.bold-text{
+    font-size: 4.5rem;
+}
+
+.black-color{
+    color: black !important;
+    
+}
