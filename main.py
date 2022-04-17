@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 import wordstat_reports
-import header_definer
-
+import keywords_finder
 app = Flask(__name__)
 
 
@@ -17,9 +16,10 @@ def article():
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
-    data = request.form.get('article')
-
-    return render_template('result.html', data=data)
+    #data = header_definer.sumextract(request.form.get('article'), 1)
+    data, count = keywords_finder.get_keywords(request.form.get('article'))
+    keywords = wordstat_reports.
+    return render_template('result.html', data=data, count=count)
 
 
 if __name__ == '__main__':

@@ -1,8 +1,9 @@
 import json, urllib.request
 import time
+import get_token
 
 url = 'https://api-sandbox.direct.yandex.ru/v4/json/'
-token = 'AQAAAAATz2ALAAfGKxA_tjoNVk5ivNjTlx1yQ1o'
+token = get_token.token
 
 
 def create_report(token, phrase):
