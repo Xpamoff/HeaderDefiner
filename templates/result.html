@@ -11,33 +11,22 @@
     <header class='head bold'>
         <img src="{{ url_for( 'static', filename='logo.png', v=1)}}" alt="logo" width='100px' class='img-pos' onclick="clickLogo()">
         <div class='buttons-pos'>
-            <a href='/' class='button-head regular small-text black-color'>ГЛАВНАЯ</a>
+            <a href='/' class='button-head regular small-text'>ГЛАВНАЯ</a>
             <a href='/article' class='button-head regular small-text'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
             <button class="open_menu button-head" onclick="openMenu()"><img src="{{ url_for( 'static', filename='menu.svg', v=1)}}" alt="menu"/></button>
         </div>
     </header>
     <div class="modal-menu">
-        <a href='/' class='button-head regular small-text black-color'>ГЛАВНАЯ</a>
+        <a href='/' class='button-head regular small-text'>ГЛАВНАЯ</a>
         <a href='/article' class='button-head regular small-text'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
     </div>
-    <div class='main'>
-        <div class='left'>
-            <div class='inner-left'>
-                <div class='bold bold-text'>welcome</div>
-                <div class='light medium-text'>hello kitty</div>
-                <div class='stick'></div>
-                <div class='thin medium-text' style='margin: 3rem;'>HeaderDefiner - сервис для получения слов.</div>
-                <a href='/article' class='button-main regular small-text'>ПОДОБРАТЬ КЛЮЧЕВЫЕ СЛОВА</a>
-            </div>
-        </div>
-
-        <div class='right'>
-            <img src="{{ url_for( 'static', filename='img2.png', v=1)}}" width='620px'>
-        </div>
+    <div class="main">
+        <div class="light medium-text">Результат:&nbsp;{{ data }}</div>
     </div>
     <div class='footer'>
         HeaderDefiner, 2022
     </div>
+
     <script src="{{ url_for( 'static', filename='main.js', v=1)}}"></script>
 </body>
 </html>

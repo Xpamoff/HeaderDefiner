@@ -7,14 +7,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index_old.html')
+    return render_template('index.html')
 
 
-@app.route('/get_data', methods=['GET', 'POST'])
-def get_data():
+@app.route('/article')
+def article():
+    return render_template('find-header.html')
+
+
+@app.route('/result', methods=['GET', 'POST'])
+def result():
     data = request.form.get('article')
 
-    return render_template('get_data_old.html', data=data)
+    return render_template('result.html', data=data)
 
 
 if __name__ == '__main__':

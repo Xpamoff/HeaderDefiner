@@ -18,10 +18,14 @@ body {
 
 .img-pos{
     padding: 1rem;
+    cursor: pointer;
 }
 
 .buttons-pos{
-    margin: 0.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .button-head{
@@ -57,7 +61,8 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: #39a0ff;
-    padding: 10rem;
+    padding: 13rem;
+    height: 35vh;
 }
 
 .left{
@@ -92,9 +97,10 @@ body {
 .footer{
     background-color: #333333;
     height: 3rem;
-    padding: 1rem;
+    padding: 3rem;
     height: 8rem;
     color: white;
+    font-weight: 100;
 }
 
 .bold{
@@ -128,5 +134,103 @@ body {
 
 .black-color{
     color: black !important;
+}
+
+.open_menu{
+    color: black;
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    display: none;
+}
+.open_menu img{
+    height: 30px
+}
+.modal-menu{
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: .3s;
+    opacity: 0;
+    pointer-events: none;
+}
+.textarea-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#article{
+    resize: none;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    border-radius: 10px;
+    margin: 30px;
     
 }
+::placeholder{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.textarea-form input{
+    width: 250px;
+    cursor: pointer;
+}
+
+
+.modal-menu .button-head{
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1439px){
+    .right{
+    display: none;
+    }
+    .left{
+    display: block;
+    width: auto;
+    }
+    .inner-left{
+    margin: 0;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .buttons-pos a{
+        display: none;
+    }
+    .open_menu{
+        display: block;
+    }
+}
+@media screen and (max-width: 424px){
+    .main{
+        padding: 13rem 0;
+    }
+    .inner-left{
+        width: auto;
+    }
+    #article{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1800px){
+    .main{
+        height: 55vh;
+    }
+}
+

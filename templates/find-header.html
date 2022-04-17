@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css', v=1)}}">
+    <title>HeaderDefiner</title>
+</head>
+<body>
+    <header class='head bold'>
+        <img src="{{ url_for( 'static', filename='logo.png', v=1)}}" alt="logo" width='100px' class='img-pos' onclick="clickLogo()">
+        <div class='buttons-pos'>
+            <a href='/' class='button-head regular small-text'>ГЛАВНАЯ</a>
+            <a href='/article' class='button-head regular small-text black-color'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
+            <button class="open_menu button-head" onclick="openMenu()"><img src="{{ url_for( 'static', filename='menu.svg', v=1)}}" alt="menu"/></button>
+        </div>
+    </header>
+    <div class="modal-menu">
+        <a href='/' class='button-head regular small-text'>ГЛАВНАЯ</a>
+        <a href='/article' class='button-head regular small-text black-color'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
+    </div>
+    <div class="main">
+        <form action="/result" method="POST" class="textarea-form">
+            <div class="light medium-text">Введите вашу статью:</div>
+            <textarea name="article" id="article" cols="40" rows="13" placeholder="Lorem ipsum..."></textarea>
+            <input type="submit" class='button-main regular small-text' value="НАЙТИ ЗАГОЛОВОК">
+        </form>
+        
+        
+    </div>
+    <div class='footer'>
+        HeaderDefiner, 2022
+    </div>
+
+    <script src="{{ url_for( 'static', filename='main.js', v=1)}}"></script>
+</body>
+</html>
