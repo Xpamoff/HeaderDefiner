@@ -12,9 +12,7 @@ def create_report(token, phrase):
         'token': token,
         'locale': 'ru',
         'param': {
-            "Phrases": [
-                phrase
-            ],
+            "Phrases": phrase,
             "GeoID": [
                 0
             ]
@@ -62,8 +60,8 @@ def phrase_choose(report):
 
 
 if __name__ == "__main__":
-    report_id = create_report(token, "Медведчук")
-    time.sleep(6)
+    report_id = create_report(token, ["война", "мир"])
+    time.sleep(60)
     new_report = get_report(token, report_id)
     if new_report != -1:
         phrase_choose(new_report)

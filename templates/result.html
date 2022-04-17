@@ -21,7 +21,11 @@
         <a href='/article' class='button-head regular small-text'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
     </div>
     <div class="main">
-        <div class="light medium-text">Результат: {{ data }}</div>
+        <div class="flex-column">
+            {% for i in data: %}
+                <div class="light medium-text">{{ i }}</div>
+            {% endfor %}
+        </div>
     </div>
     <div class='footer'>
         HeaderDefiner, 2022
