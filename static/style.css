@@ -195,11 +195,21 @@ body {
     background-color: transparent;
 }
 
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .flex-column{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+#wait-text{
+    opacity: 0;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 1439px){

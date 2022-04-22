@@ -22,9 +22,21 @@
     </div>
     <div class="main">
         <div class="flex-column">
-            {% for i in data: %}
-                <div class="light medium-text">{{ i }}</div>
-            {% endfor %}
+            <div class='bold bold-text'>Вот из каких слов должен состоять заголовок: </div>
+            <div class="flex-row">
+                {% for i in data: %}
+                    <div class="light medium-text">'{{ i }}'&nbsp;&nbsp;</div>
+                {% endfor %}
+            </div>
+            <br>
+            <div class="flex-row">
+                <a href='/wordstat-report' class='button-main regular small-text' onclick="waitOpen()">НАЙТИ ПОХОЖИЕ ЗАГОЛОВКИ</a>
+                <a href='https://wordstat.yandex.ru/' class='button-main regular small-text'>ЗАЙТИ НА ЯНДЕКС.WORDSTAT</a>
+            </div>
+            <br>
+            <div class="flex-row">
+                <div class="thin medium-text" id="wait-text">Подождите пожалуйста 10 сек</div>
+            </div>
         </div>
     </div>
     <div class='footer'>
@@ -32,5 +44,6 @@
     </div>
 
     <script src="{{ url_for( 'static', filename='main.js', v=1)}}"></script>
+    <script src="{{ url_for( 'static', filename='wait.js', v=1)}}"></script>
 </body>
 </html>
