@@ -19,6 +19,10 @@ def index():
 def article():
     return render_template('find-header.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():

@@ -103,6 +103,14 @@ body {
     font-weight: 100;
 }
 
+.faq{
+    display: block;
+}
+
+.faq > div{
+    padding: 2rem;
+}
+
 .bold{
     font-weight: 900;
 }
