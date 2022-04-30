@@ -51,7 +51,6 @@ def get_report(token, report_id):
 def phrase_choose(report):
     a = []
     sorted_report = sorted(report, key=lambda d: d['Shows'], reverse=True)
-    # print(sorted_report)
     count = 0
     for i in sorted_report:
         a.append(i['Phrase'] + ": " + str(i['Shows']))

@@ -12,6 +12,7 @@
         <img src="{{ url_for( 'static', filename='logo.png', v=1)}}" alt="logo" width='100px' class='img-pos' onclick="clickLogo()">
         <div class='buttons-pos'>
             <a href='/' class='button-head regular small-text'>ГЛАВНАЯ</a>
+            <a href='/faq' class='button-head regular small-text'>КАК ИСПОЛЬЗОВАТЬ?</a>
             <a href='/article' class='button-head regular small-text'>ПОЛУЧИТЬ КЛЮЧЕВЫЕ СЛОВА</a>
             <button class="open_menu button-head" onclick="openMenu()"><img src="{{ url_for( 'static', filename='menu.svg', v=1)}}" alt="menu"/></button>
         </div>
@@ -22,7 +23,7 @@
     </div>
     <div class="main">
         <div class="flex-column">
-            <div class='bold bold-text'>Вот что выдет Wordstat (не обесудьте): </div>
+            <div class='bold bold-text'>Вот что выдет Wordstat: </div>
             <br>
             <div class="flex-column">
                 <div class="flex-column" style="align-items: flex-start;">

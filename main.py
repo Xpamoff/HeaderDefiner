@@ -1,14 +1,13 @@
 from flask import Flask, request, render_template, session
-import json, urllib.request
 import time
 import get_token
 import wordstat_reports
 import keywords_finder
 
-
 app = Flask(__name__)
 
 actual_data = []
+
 
 @app.route('/')
 def index():
@@ -18,6 +17,7 @@ def index():
 @app.route('/article')
 def article():
     return render_template('find-header.html')
+
 
 @app.route('/faq')
 def faq():
