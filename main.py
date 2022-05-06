@@ -4,6 +4,7 @@ import get_token
 import wordstat_reports
 import keywords_finder
 
+
 app = Flask(__name__)
 
 actual_data = []
